@@ -14,9 +14,9 @@ def compiles():
 @check50.check(compiles)
 def test_input_15():
     """input of 15 produces correct output"""
-    check50.run("./test").wait().stdin("15").stdout("1 2 4 5 7 8 10 \n").exit(0)
+    check50.run("./test").stdin("15\n").stdout("1 2 4 5 7 8 10\n", timeout=5).exit(0)
 
 @check50.check(compiles)
 def test_input_9():
     """input of 9 produces correct output"""
-    check50.run("./test").wait().stdin("9").stdout("1 2 4 5 7 8 \n").exit(0)
+    check50.run("./test").stdin("9\n").stdout("1 2 4 5 7 8\n", timeout=5).exit(0)
