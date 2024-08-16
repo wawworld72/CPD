@@ -13,10 +13,10 @@ def compiles():
 
 @check50.check(compiles)
 def test_input_15():
-    """input of 15 produces correct output"""
+    """입력 : 15 / 기대 출력 : 1 2 4 5 7 8 10"""
     check50.run("./test").stdin("15").stdout("1 2 4 5 7 8 10").exit(0)
 
 @check50.check(compiles)
 def test_input_9():
-    """input of 9 produces correct output"""
+    """입력 : 15 / 기대 출력 : 1 2 4 5 7 8"""
     check50.run("./test").stdin("9").stdout("1 2 4 5 7 8").exit(0)
