@@ -24,4 +24,4 @@ def test_input_9():
 @check50.check(compiles)
 def test_input_x():
     """input of x produces correct output"""
-    check50.run("./test").stdin("12\n").stdout("output : 12\n",regex=True).exit(0)
+    check50.run("./test").stdin("12").stdout("output : 12\n",regex=True).exit(0)
