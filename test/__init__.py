@@ -12,11 +12,11 @@ def compiles():
     check50.c.compile("test.c", lcs50=True)
 
 @check50.check(compiles)
-def test_input_1():
-    """input of 1 produces correct output"""
-    check50.run("./test").stdin("1\n").stdout("output : 1\n").exit(0)
+def test_input_15():
+    """input of 15 produces correct output"""
+    check50.run("./test").stdin("15\n").stdout("1 2 4 5 7 8 10\n").exit(0)
 
 @check50.check(compiles)
-def test_input_42():
-    """input of 42 produces correct output"""
-    check50.run("./test").stdin("42\n").stdout("output : 42\n").exit(0)
+def test_input_9():
+    """input of 9 produces correct output"""
+    check50.run("./test").stdin("9\n").stdout("1 2 4 5 7 8\n").exit(0)
