@@ -9,7 +9,7 @@ def exists():
 @check50.check(exists)
 def compiles():
     """test.c compiles"""
-    check50.c.compile("test.c", lcs50=True)
+    check50.c.compile("test.c")
 
 @check50.check(compiles)
 def test_input_15():
