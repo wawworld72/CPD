@@ -20,3 +20,8 @@ def test_input_15():
 def test_input_9():
     """input of 9 produces correct output"""
     check50.run("./test").stdin("9\n").stdout("1 2 4 5 7 8\n").stdout(check50.EOF).exit(0)
+
+@check50.check(compiles)
+def test_input_x():
+    """input of x produces correct output"""
+    check50.run("./test").stdin("12\n").stdout("output : 12\n").stdout(check50.EOF).exit(0)
