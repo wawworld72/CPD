@@ -3,15 +3,20 @@ import check50.c
 
 @check50.check()
 def exists():
-    """hello.c exists"""
-    check50.exists("hello.c")
+    """test.c exists"""
+    check50.exists("test.c")
     
 @check50.check()
 def compiles():
-    """hello.c compiles"""
-    check50.c.compile("hello.c")
+    """test.c compiles"""
+    check50.c.compile("test.c")
 
 @check50.check(compiles)
-def prints_hello():
-    """prints "hello, world\\n" """
-    check50.run("./hello").stdout("[Hh]ello, world!?\n", regex=True).exit(0)
+def test_input_15():
+    """input of 15 products correct output"""
+    check50.run("./test").stdin("15").stdout("1 2 4 5 7 8 10 \n").exit(0)
+
+@check50.check(compiles)
+def test_input_9():
+    """input of 15 products correct output"""
+    check50.run("./test").stdin("9").stdout("1 2 4 5 7 8 \n").exit(0)
