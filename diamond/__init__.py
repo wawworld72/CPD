@@ -13,8 +13,8 @@ def compiles():
 
 @check50.check(compiles)
 def test_case():
-    """....A....\n
-    ...B.B...\n
+    """....A....
+    ...B.B...
     ..C...C..\n
     .D.....D.\n
     E.......E\n
