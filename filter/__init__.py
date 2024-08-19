@@ -4,7 +4,7 @@ import check50.c
 @check50.check()
 def exists():
     """filter.c exists"""
-    check50.exists("test.c")
+    check50.exists("filter.c")
     
 @check50.check(exists)
 def compiles():
