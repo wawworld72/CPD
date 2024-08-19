@@ -15,11 +15,11 @@ def compiles():
 def test_case():
     """....A....
     ...B.B...
-    ..C...C..\n
-    .D.....D.\n
-    E.......E\n
-    .D.....D.\n
-    ..C...C..\n
-    ...B.B...\n
+    ..C...C..
+    .D.....D.
+    E.......E
+    .D.....D.
+    ..C...C..
+    ...B.B...
     ....A...."""
     check50.run("./diamond").stdout("....A....\n").stdout("...B.B...\n").stdout("..C...C..\n").stdout(".D.....D.\n").stdout("E.......E\n").stdout(".D.....D.\n").stdout("..C...C..\n").stdout("...B.B...\n").stdout("....A....").exit(0)
