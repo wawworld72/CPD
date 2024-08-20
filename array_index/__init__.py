@@ -3,20 +3,15 @@ import check50.c
 
 @check50.check()
 def exists():
-    """filter.c exists"""
-    check50.exists("filter.c")
+    """array_index.c exists"""
+    check50.exists("array_index.c")
     
 @check50.check(exists)
 def compiles():
-    """filter.c compiles"""
-    check50.c.compile("filter.c", lcs50 = True)
+    """array_index.c compiles"""
+    check50.c.compile("array_index.c", lcs50 = True)
 
 @check50.check(compiles)
-def test_input_15():
-    """입력 : 15 / 기대 출력 : 1 2 4 5 7 8 10"""
-    check50.run("./filter").stdin("15").stdout("1 2 4 5 7 8 10").exit(0)
-
-@check50.check(compiles)
-def test_input_9():
-    """입력 : 9 / 기대 출력 : 1 2 4 5 7 8"""
-    check50.run("./filter").stdin("9").stdout("1 2 4 5 7 8").exit(0)
+def test_input_1():
+    """입력 : 3 / 기대 출력 : arr[3] = 40"""
+    check50.run("./array_index").stdin("3").stdout("arr[3] = 40").exit(0)
