@@ -28,6 +28,6 @@ def test_input_13579():
     check50.run("./oddsum").stdin("13579").stdout("25").exit(0)
 
 @check50.check(compiles)
-def test_input_-97531():
+def test_input_97531():
     """입력 : -97531 / 기대 출력 : 25"""
     check50.run("./oddsum").stdin("-97531").stdout("25").exit(0)
