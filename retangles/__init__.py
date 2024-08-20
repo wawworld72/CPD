@@ -30,5 +30,5 @@ def test_input_3():
 @check50.check(compiles)
 def test_input_4():
     """\n  입력 x: -1 1 10 10 \n  입력 y: \n  기대 출력 : 잘못된 입력"""
-    check50.run("./retangles").stdin("-1\n1\n10\n10\n\n\n\n\n").stdout("잘못된 입력").exit(1)
+    check50.run("./rectangles").stdin("1\n1\n10\n10\n\n\n\n\n").stdout("잘못된 입력\n").exit(1)
 
