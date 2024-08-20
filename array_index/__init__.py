@@ -13,5 +13,5 @@ def compiles():
 
 @check50.check(compiles)
 def test_input_1():
-    """입력 : 3 / 기대 출력 : 40"""
-    check50.run("./array_index").stdin("3").stdout("40").exit(0)
+    """입력 : 3 / 기대 출력 : arr[3] = 40"""
+    check50.run("./array_index").stdin("3").stdout(f"arr[3] = 40").exit(0)
