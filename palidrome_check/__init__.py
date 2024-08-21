@@ -29,4 +29,4 @@ def test_input_3():
 @check50.check(compiles)
 def test_input_4():
     """입력 : -1 / 기대 출력 : 잘못된 입력"""
-    check50.run("./palidrome_check").stdin("-1").stdout("잘못된 입력").exit(0)
+    check50.run("./palidrome_check").stdin("-1").stdout("잘못된 입력").exit(1)
