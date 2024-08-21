@@ -24,7 +24,7 @@ def test_input_2():
 @check50.check(compiles)
 def test_input_3():
     """입력 : 1234 / 기대 출력 : 1234는 거짓"""
-    check50.run("./palidrome_check").stdin("1234").stdout("1991는 거짓").exit(0)
+    check50.run("./palidrome_check").stdin("1234").stdout("1234는 거짓").exit(0)
 
 @check50.check(compiles)
 def test_input_4():
