@@ -15,3 +15,8 @@ def compiles():
 def test_input_1():
     """입력 : 13 / 기대 출력 : Good afternoon!"""
     check50.run("./time_greeting").stdin("13").stdout("Good afternoon!").exit(0)
+
+@check50.check(compiles)
+def test_input_2():
+    """입력 : 20 / 기대 출력 : Good evening!"""
+    check50.run("./time_greeting").stdin("20").stdout("Good evening!").exit(0)
