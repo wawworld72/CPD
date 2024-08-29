@@ -23,5 +23,5 @@ def test_input_2():
 
 @check50.check(compiles)
 def test_input_3():
-    """입력1 : 5 / 입력2: -1 -1 -2 -2 -2 / 기대 출력 : -2"""
-    check50.run("./mode_finder").stdin("(-1)\n (-1)\n (-2)\n (-2)\n (-2)").stdout("-2").exit(0)
+    """입력1 : 1 / 입력2: -1 -1 -2 -2 -2 / 기대 출력 : -2"""
+    check50.run("./mode_finder").stdin("-2").stdout("-2").exit(0)
