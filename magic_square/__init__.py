@@ -21,3 +21,7 @@ def test_input_2():
     """입력 : \n3 1 2\n2 3 1 \n1 2 3  \n기대 출력 : 이 배열은 마방진이 아닙니다."""
     check50.run("./magic_square").stdin("3\n1\n2\n2\n3\n1\n1\n2\n3\n").stdout("이 배열은 마방진이 아닙니다.").exit(0)
 
+@check50.check(compiles)
+def test_input_3():
+    """입력 : \n8 1 6 \n3 5 7 \n4 9 2  \n기대 출력 : 이 배열은 마방진입니다."""
+    check50.run("./magic_square").stdin("8\n1\n6\n3\n5\n7\n4\n9\n2\n").stdout("이 배열은 마방진입니다.").exit(0)
