@@ -3,20 +3,15 @@ import check50.c
 
 @check50.check()
 def exists():
-    """filter.c exists"""
-    check50.exists("filter.c")
+    """student_scores.c exists"""
+    check50.exists("student_scores.c")
     
 @check50.check(exists)
 def compiles():
-    """filter.c compiles"""
-    check50.c.compile("filter.c", lcs50 = True)
+    """student_scores.c compiles"""
+    check50.c.compile("student_scores.c", lcs50 = True)
 
 @check50.check(compiles)
-def test_input_15():
-    """입력 : 15 / 기대 출력 : 1 2 4 5 7 8 10"""
-    check50.run("./filter").stdin("15").stdout("1 2 4 5 7 8 10").exit(0)
-
-@check50.check(compiles)
-def test_input_9():
-    """입력 : 9 / 기대 출력 : 1 2 4 5 7 8"""
-    check50.run("./filter").stdin("9").stdout("1 2 4 5 7 8").exit(0)
+def test_input_1():
+    """기대 출력 : \n학생 1: 총점 = 345, 평균 = 86.25 \n학생 2: 총점 = 343, 평균 = 85.75 \n학생 3: 총점 = 356, 평균 = 89.00"""
+    check50.run("./student_scores").stdout("학생 1: 총점 = 345, 평균 = 86.25\n학생 2: 총점 = 343, 평균 = 85.75\n학생 3: 총점 = 356, 평균 = 89.00").exit(0)
