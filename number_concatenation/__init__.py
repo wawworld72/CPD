@@ -14,7 +14,7 @@ def compiles():
 @check50.check(compiles)
 def test_input_1():
     """입력 : 1 2 3 4 5 -1 / 기대 출력 : 12345"""
-    check50.run("./number_concatenation").stdin("1\n2\n4\n5\n-1").stdout("12345").exit(0)
+    check50.run("./number_concatenation").stdin("1\n2\n4\n5\n-1\n").stdout("12345").exit(0)
 
 @check50.check(compiles)
 def test_input_2():
