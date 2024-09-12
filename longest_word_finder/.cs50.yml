@@ -1,7 +1,7 @@
 check50: 
   files: &check50_files
     - !exclude "*"
-    - !require array_index.c
+    - !require longest_word_finder.c
     
 submit50:
   files: *check50_files
