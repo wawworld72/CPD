@@ -14,5 +14,4 @@ def compiles():
 @check50.check(compiles)
 def test_input_1():
     """입력 : hello world programming / 기대 출력 : programming"""
-    check50.run("./longest_word_finder").stdin("hello world programming").stdout("programming").exit(0)
-
+    check50.run("./longest_word_finder").stdin("hello world programming").stdout("programming\n").exit(0)
