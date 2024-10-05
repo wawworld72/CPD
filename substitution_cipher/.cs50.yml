@@ -1,7 +1,7 @@
 check50: 
   files: &check50_files
     - !exclude "*"
-    - !require time_greeting.c
+    - !require substitution_cipher
     
 submit50:
   files: *check50_files
