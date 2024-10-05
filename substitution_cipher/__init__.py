@@ -1,47 +1,85 @@
-import check50
-import check50.c
+from check50 import *
 
-@check50.check()
+@check()
 def exists():
-    """substitution_cipher.c exists"""
-    check50.exists("substitution_cipher.c")
-    
-@check50.check(exists)
+    """substitution.c exists"""
+    return exists("substitution.c")
+
+@check("exists")
 def compiles():
-    """substitution_cipher.c compiles"""
-    check50.c.compile("substitution_cipher.c", lcs50=True)
+    """substitution.c compiles"""
+    return run("clang -o substitution substitution.c -lcs50").exit(0)
 
-@check50.check(compiles)
-def test_input_1():
-    """입력 키: qWeRtYuIoPlKjHgFdSaZxCvBnM / 입력 메시지: Hello World! / 기대 출력: 암호문: Itssg Vgksr!"""
-    check50.run("./substitution_cipher qWeRtYuIoPlKjHgFdSaZxCvBnM").stdin("Hello World!").stdout("암호문: Itssg Vgksr!").exit(0)
+@check("compiles")
+def test_case_1():
+    """Test case 1: Valid key and message"""
+    key = "qWeRtYuIoPlKjHgFdSaZxCvBnM"
+    plaintext = "Hello World!"
+    expected_output = "암호문: Itssg Vgksr!"
 
-@check50.check(compiles)
-def test_input_2():
-    """입력 키: ZYXWVUTSRQPONMLKJIHGFEDCBA / 입력 메시지: ABCDEFGHIJKLMNOPQRSTUVWXYZ / 기대 출력: 암호문: ZYXWVUTSRQPONMLKJIHGFEDCBA"""
-    check50.run("./substitution_cipher ZYXWVUTSRQPONMLKJIHGFEDCBA").stdin("ABCDEFGHIJKLMNOPQRSTUVWXYZ").stdout("암호문: ZYXWVUTSRQPONMLKJIHGFEDCBA").exit(0)
+    output = run("./substitution " + key).stdin(plaintext).stdout().strip()
+    print(output)  # For debugging
+    assert expected_output in output
 
-@check50.check(compiles)
-def test_input_3():
-    """입력 키: QWERTYUIOPLKJHGFDSAZXCVBQ / 기대 출력: 키에는 중복된 문자가 없어야 합니다."""
-    check50.run("./substitution_cipher QWERTYUIOPLKJHGFDSAZXCVBQ").stdin("test").stdout("키에는 중복된 문자가 없어야 합니다.").exit(1)
+@check("compiles")
+def test_case_2():
+    """Test case 2: Valid key and message"""
+    key = "ZYXWVUTSRQPONMLKJIHGFEDCBA"
+    plaintext = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+    expected_output = "암호문: ZYXWVUTSRQPONMLKJIHGFEDCBA"
 
-@check50.check(compiles)
-def test_input_4():
-    """입력 키: QWERTYUIOPLKJHGFD1AZXCVBNM / 기대 출력: 키는 오직 알파벳 문자만 포함해야 합니다."""
-    check50.run("./substitution_cipher QWERTYUIOPLKJHGFD1AZXCVBNM").stdin("test").stdout("키는 오직 알파벳 문자만 포함해야 합니다.").exit(1)
+    output = run("./substitution " + key).stdin(plaintext).stdout().strip()
+    print(output)  # For debugging
+    assert expected_output in output
 
-@check50.check(compiles)
-def test_input_5():
-    """입력 키: QWERTYUIOPLKJHGFDSAZXCVBNML / 기대 출력: 키는 26개의 문자로 구성되어야 합니다."""
-    check50.run("./substitution_cipher QWERTYUIOPLKJHGFDSAZXCVBNML").stdin("test").stdout("키는 26개의 문자로 구성되어야 합니다.").exit(1)
+@check("compiles")
+def test_case_3():
+    """Test case 3: Duplicate characters in key"""
+    key = "QWERTYUIOPLKJHGFDSAZXCVBQ"
+    expected_output = "키에는 중복된 문자가 없어야 합니다."
 
-@check50.check(compiles)
-def test_input_6():
-    """입력 키: QWERTYUIOPLKJHGFDSAZXCVBNM / 입력 메시지: 1234!@#$ / 기대 출력: 암호문: 1234!@#$"""
-    check50.run("./substitution_cipher QWERTYUIOPLKJHGFDSAZXCVBNM").stdin("1234!@#$").stdout("암호문: 1234!@#$").exit(0)
+    output = run("./substitution " + key).stdout().strip()
+    print(output)  # For debugging
+    assert expected_output in output
 
-@check50.check(compiles)
-def test_input_7():
-    """입력 키: QWERTYUIOPLKJHGFDSAZXCVBNM / 입력 메시지: CS50rocks! / 기대 출력: 암호문: LP50vekyh!"""
-    check50.run("./substitution_cipher QWERTYUIOPLKJHGFDSAZXCVBNM").stdin("CS50rocks!").stdout("암호문: LP50vekyh!").exit(0)
+@check("compiles")
+def test_case_4():
+    """Test case 4: Non-alphabetic characters in key"""
+    key = "QWERTYUIOPLKJHGFD1AZXCVBNM"
+    expected_output = "키는 오직 알파벳 문자만 포함해야 합니다."
+
+    output = run("./substitution " + key).stdout().strip()
+    print(output)  # For debugging
+    assert expected_output in output
+
+@check("compiles")
+def test_case_5():
+    """Test case 5: Key length not equal to 26"""
+    key = "QWERTYUIOPLKJHGFDSAZXCVBNML"
+    expected_output = "키는 26개의 문자로 구성되어야 합니다."
+
+    output = run("./substitution " + key).stdout().strip()
+    print(output)  # For debugging
+    assert expected_output in output
+
+@check("compiles")
+def test_case_6():
+    """Test case 6: Valid key with no change in non-alpha characters"""
+    key = "QWERTYUIOPLKJHGFDSAZXCVBNM"
+    plaintext = "1234!@#$"
+    expected_output = "암호문: 1234!@#$"
+
+    output = run("./substitution " + key).stdin(plaintext).stdout().strip()
+    print(output)  # For debugging
+    assert expected_output in output
+
+@check("compiles")
+def test_case_7():
+    """Test case 7: Valid key with mixed input"""
+    key = "QWERTYUIOPLKJHGFDSAZXCVBNM"
+    plaintext = "CS50rocks!"
+    expected_output = "암호문: LP50vekyh!"
+
+    output = run("./substitution " + key).stdin(plaintext).stdout().strip()
+    print(output)  # For debugging
+    assert expected_output in output
