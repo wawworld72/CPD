@@ -45,3 +45,14 @@ def view_tesk():
     일정 1: 12시 - 오후\n
     일정 2: 20시 - 저녁"""
     check50.run("./task_manager").stdin("1\n12\n1\n20\n2\n3\n").stdout("일정 1: 12시 - 오후\n일정 2: 20시 - 저녁").exit(0)
+
+@check50.check(compiles)
+def exit():
+    """
+    1. 새 일정 추가\n
+    2. 일정 목록 보기\n
+    3. 프로그램 종료\n
+    원하는 작업을 선택하세요: 3\n
+    프로그램을 종료합니다. 안녕히 가세요!"""
+    check50.run("./task_manager").stdin("3").stdout("프로그램을 종료합니다. 안녕히 가세요!").exit(0)
+
