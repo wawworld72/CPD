@@ -25,8 +25,7 @@ def add_tesk_1():
 
 @check50.check(compiles)
 def add_tesk_2():
-    """
-    1. 새 일정 추가\n
+    """1. 새 일정 추가\n
     2. 일정 목록 보기\n
     3. 프로그램 종료\n
     원하는 작업을 선택하세요: 1\n
@@ -36,8 +35,7 @@ def add_tesk_2():
 
 @check50.check(compiles)
 def view_tesk():
-    """
-    1. 새 일정 추가\n
+    """1. 새 일정 추가\n
     2. 일정 목록 보기\n
     3. 프로그램 종료\n
     원하는 작업을 선택하세요: 2\n
@@ -48,8 +46,7 @@ def view_tesk():
 
 @check50.check(compiles)
 def exit():
-    """
-    1. 새 일정 추가\n
+    """1. 새 일정 추가\n
     2. 일정 목록 보기\n
     3. 프로그램 종료\n
     원하는 작업을 선택하세요: 3\n
