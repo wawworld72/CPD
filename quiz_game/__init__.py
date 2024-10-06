@@ -3,20 +3,25 @@ import check50.c
 
 @check50.check()
 def exists():
-    """time_greeting.c exists"""
-    check50.exists("time_greeting.c")
+    """quiz_game.c exists"""
+    check50.exists("quiz_game.c")
     
 @check50.check(exists)
 def compiles():
-    """time_greeting.c compiles"""
-    check50.c.compile("time_greeting.c", lcs50 = True)
+    """quiz_game.c compiles"""
+    check50.c.compile("quiz_game.c", lcs50 = True)
 
 @check50.check(compiles)
 def test_input_1():
-    """입력 : 13 / 기대 출력 : Good afternoon!"""
-    check50.run("./time_greeting").stdin("13").stdout("Good afternoon!").exit(0)
+    """퀴즈 난이도를 선택하세요 (0: 쉬움, 1: 보통, 2: 어려움): 1\n
+    보통 난이도를 선택하셨습니다. 기본 점수 5점을 획득했습니다!\n
+    \n
+    다음 질문들에 답하세요 (1-5 중 선택):\n
+    질문 1: 1 질문 2: 3 질문 3: 5 질문 4: 2 질문 5: 4\n
+    정답 개수: 1\n
+    최종 점수: 8\n
 
-@check50.check(compiles)
-def test_input_2():
-    """입력 : 20 / 기대 출력 : Good evening!"""
-    check50.run("./time_greeting").stdin("20").stdout("Good evening!").exit(0)
+    현재 시간을 입력하세요 (0-23): 8\n
+    좋은 아침입니다! 아침 퀴즈로 하루를 시작하셨네요.!"""
+    check50.run("./quiz_game").stdin("1\n1\n3\n5\n2\n4\n8\n").stdout("좋은 아침입니다! 아침 퀴즈로 하루를 시작하셨네요.!").exit(0)
+
