@@ -14,4 +14,4 @@ def compiles():
 @check50.check(compiles)
 def test_input_1():
     """일정 추가 테스트"""
-    check50.run("./task_manager").stdin("1\n12\n").stdout("일정이 추가되었습니다.").exit(0)
+    check50.run("./task_manager").stdin("1\n12\n").stdout("일정이 추가되었습니다.\n").exit(0)
