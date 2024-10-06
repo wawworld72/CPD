@@ -14,7 +14,8 @@ def compiles():
 @check50.check(compiles)
 def test_input_1():
     """일정 관리 프로그램에 오신 것을 환영합니다!\n
-    \n1. 새 일정 추가\n
+    \n
+    1. 새 일정 추가\n
     2. 일정 목록 보기\n
     3. 프로그램 종료\n
     원하는 작업을 선택하세요: 1\n
