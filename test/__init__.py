@@ -34,7 +34,7 @@ def test_average_grade():
     """학생 평균 성적 계산이 정상적으로 동작하는지 테스트합니다."""
     check50.run("./test").stdin("1\n2024\n51\n60\n50\n60\n50\n")\
         .stdin("1\n2023\n81\n80\n90\n80\n80\n")\
-        .stdin("3\n1\n5\n")\
+        .stdin("3\n1\n")\
         .stdout("학생 ID: 2023, 평균 성적: 82.00\n", regex=False)\
         .stdout("프로그램을 종료합니다. 안녕히 가세요!\n", regex=False)\
         .exit(0)
@@ -44,7 +44,7 @@ def test_sum_odd_digits():
     """학생 ID의 홀수 자릿수 합을 계산하는 기능을 테스트합니다."""
     check50.run("./test").stdin("1\n2024\n51\n60\n50\n60\n50\n")\
         .stdin("1\n2023\n81\n80\n90\n80\n80\n")\
-        .stdin("4\n1\n5\n")\
+        .stdin("4\n1\n")\
         .stdout("학생 ID: 2023, ID의 홀수 자릿수 합: 3\n", regex=False)\
         .stdout("프로그램을 종료합니다. 안녕히 가세요!\n", regex=False)\
         .exit(0)
