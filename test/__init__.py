@@ -25,7 +25,7 @@ def test_even_grades_count():
     check50.run("./test").stdin("1\n2024\n51\n60\n50\n60\n50\n")\
         .stdin("1\n2023\n81\n80\n90\n80\n80\n")\
         .stdin("2\n5\n")\
-        .stdout("짝수 성적의 개수: 8\n", regex=False)\
+        .stdout("짝수 성적의 개수: 8", regex=False)\
         .stdout("프로그램을 종료합니다. 안녕히 가세요!\n", regex=False)\
         .exit(0)
 
