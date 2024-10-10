@@ -15,5 +15,8 @@ def compiles():
 def test_add_student():
     """학생 추가 테스트"""
     check50.run("./test").stdin("1\n2024\n51\n60\n50\n60\n50\n1").stdout("학생이 추가되었습니다.\n")
+
+@check50.check(compiles)
+def test_add_student2():
     """학생 2명 추가 테스트"""
-    check50.run("./test").stdin("1\n2023\n81\n80\n90\n80\n80\n2").stdout("학생이 추가되었습니다.\n")
+    check50.run("./test").stdin("1\n2024\n51\n60\n50\n60\n50\n1\n1\n2023\n81\n80\n90\n80\n80\n2").stdout("학생이 추가되었습니다.\n")
