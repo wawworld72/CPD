@@ -41,6 +41,6 @@ def test_input_3():
     예상 출력: Itkkg Vgksr!"""
     check50.run("./substitution_cipher") \
            .stdin("qWeRtYuIoPlKjHgFdSaZxCvBnM") \
-           .stdin("Itkkg Vgksr!") \
+           .stdin("Hello World!") \
            .stdout("Itkkg Vgskr!") \
            .exit(0)
