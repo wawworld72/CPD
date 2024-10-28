@@ -13,9 +13,9 @@ def compiles():
 
 @check50.check(compiles)
 def test_input_1():
-    """\n입력 키: qWeRtYuIoPlKjHgFdSaZxCvBnM\n
-    입력 메시지: Hello World!\n
-    예상 출력: 암호문: Itssg Vgksr!"""
+    """입력 키: ZYXWVUTSRQPONMLKJIHGFEDCBA
+    입력 메시지: ABCDEFGHIJKLMNOPQRSTUVWXYZ\n
+    예상 출력: 암호문: ZYXWVUTSRQPONMLKJIHGFEDCBA"""
     check50.run("./substitution_cipher") \
            .stdin("ZYXWVUTSRQPONMLKJIHGFEDCBA") \
            .stdin("ABCDEFGHIJKLMNOPQRSTUVWXYZ") \
