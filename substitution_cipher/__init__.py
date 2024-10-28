@@ -32,3 +32,15 @@ def test_input_2():
            .stdin("I am a boy") \
            .stdout("R zn z ylb") \
            .exit(0)
+
+
+@check50.check(compiles)
+def test_input_3():
+    """\n입력 키: qWeRtYuIoPlKjHgFdSaZxCvBnM\n
+    입력 메시지: ABCDEFGHIJKLMNOPQRSTUVWXYZ\n
+    예상 출력: 암호문: ZYXWVUTSRQPONMLKJIHGFEDCBA"""
+    check50.run("./substitution_cipher") \
+           .stdin("ZYXWVUTSRQPONMLKJIHGFEDCBA") \
+           .stdin("Hello World!") \
+           .stdout("Itkkg Vgksr!") \
+           .exit(0)
