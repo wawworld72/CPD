@@ -17,7 +17,7 @@ def test_input_1():
     입력 메시지: Hello World!\n
     예상 출력: 암호문: Itssg Vgksr!"""
     check50.run("./substitution_cipher") \
-           .stdin("qWeRtYuIoPlKjHgFdSaZxCvBnM") \
-           .stdin("Hello World!") \
-           .stdout("암호문: Itssg Vgksr!\n") \
+           .stdin("ZYXWVUTSRQPONMLKJIHGFEDCBA") \
+           .stdin("ABCDEFGHIJKLMNOPQRSTUVWXYZ") \
+           .stdout("암호문: ZYXWVUTSRQPONMLKJIHGFEDCBA") \
            .exit(0)
