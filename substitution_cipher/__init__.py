@@ -13,7 +13,7 @@ def compiles():
 
 @check50.check(compiles)
 def test_input_1():
-    """입력 키: ZYXWVUTSRQPONMLKJIHGFEDCBA
+    """\n입력 키: ZYXWVUTSRQPONMLKJIHGFEDCBA\n
     입력 메시지: ABCDEFGHIJKLMNOPQRSTUVWXYZ\n
     예상 출력: 암호문: ZYXWVUTSRQPONMLKJIHGFEDCBA"""
     check50.run("./substitution_cipher") \
@@ -24,7 +24,7 @@ def test_input_1():
 
 @check50.check(compiles)
 def test_input_2():
-    """입력 키: QWERTYUIOPLKJHGFDSAZXCVBNM
+    """\n입력 키: QWERTYUIOPLKJHGFDSAZXCVBNM\n
     입력 메시지: ABCDEFGHIJKLMNOPQRSTUVWXYZ\n
     예상 출력: 암호문: ZYXWVUTSRQPONMLKJIHGFEDCBA"""
     check50.run("./substitution_cipher") \
