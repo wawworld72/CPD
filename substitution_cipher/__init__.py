@@ -19,5 +19,5 @@ def test_input_1():
     check50.run("./substitution_cipher") \
            .stdin("ZYXWVUTSRQPONMLKJIHGFEDCBA") \
            .stdin("ABCDEFGHIJKLMNOPQRSTUVWXYZ") \
-           .stdout("암호문: ZYXWVUTSRQPONMLKJIHGFEDCBA") \
+           .stdout("ZYXWVUTSRQPONMLKJIHGFEDCBA") \
            .exit(0)
