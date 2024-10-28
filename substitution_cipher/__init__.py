@@ -16,5 +16,5 @@ def test_input_1():
     """\n입력 키: qWeRtYuIoPlKjHgFdSaZxCvBnM\n
     입력 메시지: Hello World!\n
     예상 출력: 암호문: Itssg Vgksr!"""
-    check50.run("./substitution_cipher").stdin("qWeRtYuIoPlKjHgFdSaZxCvBnM\n").stdin("Hello World!\n").stdout("Itssg Vgksr!\n").exit(0)
+    check50.run("./substitution_cipher").stdin("qWeRtYuIoPlKjHgFdSaZxCvBnM").stdin("Hello World!").stdout("Itssg Vgksr!\n").exit(0)
 
