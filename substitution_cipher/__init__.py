@@ -30,5 +30,5 @@ def test_input_2():
     check50.run("./substitution_cipher") \
            .stdin("ZYXWVUTSRQPONMLKJIHGFEDCBA") \
            .stdin("I am a boy") \
-           .stdout("O qj q wgn") \
+           .stdout("R zn z ylb") \
            .exit(0)
