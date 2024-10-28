@@ -15,7 +15,7 @@ def compiles():
 def test_input_1():
     """\n입력 키: ZYXWVUTSRQPONMLKJIHGFEDCBA\n
     입력 메시지: ABCDEFGHIJKLMNOPQRSTUVWXYZ\n
-    예상 출력: 암호문: ZYXWVUTSRQPONMLKJIHGFEDCBA"""
+    예상 출력: ZYXWVUTSRQPONMLKJIHGFEDCBA"""
     check50.run("./substitution_cipher") \
            .stdin("ZYXWVUTSRQPONMLKJIHGFEDCBA") \
            .stdin("ABCDEFGHIJKLMNOPQRSTUVWXYZ") \
@@ -26,7 +26,7 @@ def test_input_1():
 def test_input_2():
     """\n입력 키: QWERTYUIOPLKJHGFDSAZXCVBNM\n
     입력 메시지: ABCDEFGHIJKLMNOPQRSTUVWXYZ\n
-    예상 출력: 암호문: ZYXWVUTSRQPONMLKJIHGFEDCBA"""
+    예상 출력: ZYXWVUTSRQPONMLKJIHGFEDCBA"""
     check50.run("./substitution_cipher") \
            .stdin("ZYXWVUTSRQPONMLKJIHGFEDCBA") \
            .stdin("I am a boy") \
@@ -37,10 +37,10 @@ def test_input_2():
 @check50.check(compiles)
 def test_input_3():
     """\n입력 키: qWeRtYuIoPlKjHgFdSaZxCvBnM\n
-    입력 메시지: ABCDEFGHIJKLMNOPQRSTUVWXYZ\n
-    예상 출력: 암호문: ZYXWVUTSRQPONMLKJIHGFEDCBA"""
+    입력 메시지: Hello World!\n
+    예상 출력: Itkkg Vgksr!"""
     check50.run("./substitution_cipher") \
-           .stdin("ZYXWVUTSRQPONMLKJIHGFEDCBA") \
+           .stdin("qWeRtYuIoPlKjHgFdSaZxCvBnM") \
            .stdin("Hello World!") \
            .stdout("Itkkg Vgksr!") \
            .exit(0)
