@@ -37,10 +37,10 @@ def test_input_2():
 @check50.check(compiles)
 def test_input_3():
     """\n입력 키: qWeRtYuIoPlKjHgFdSaZxCvBnM\n
-    입력 메시지: Hello World!\n
+    입력 메시지: Itkkg Vgksr!\n
     예상 출력: Itkkg Vgksr!"""
     check50.run("./substitution_cipher") \
            .stdin("qWeRtYuIoPlKjHgFdSaZxCvBnM") \
-           .stdin("Hello World!") \
-           .stdout("Itkkg Vgksr!\n") \
+           .stdin("Itkkg Vgksr!") \
+           .stdout("Itkkg Vgksr!") \
            .exit(0)
