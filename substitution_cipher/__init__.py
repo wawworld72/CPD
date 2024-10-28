@@ -21,3 +21,14 @@ def test_input_1():
            .stdin("ABCDEFGHIJKLMNOPQRSTUVWXYZ") \
            .stdout("ZYXWVUTSRQPONMLKJIHGFEDCBA") \
            .exit(0)
+
+@check50.check(compiles)
+def test_input_2():
+    """입력 키: QWERTYUIOPLKJHGFDSAZXCVBNM
+    입력 메시지: ABCDEFGHIJKLMNOPQRSTUVWXYZ\n
+    예상 출력: 암호문: ZYXWVUTSRQPONMLKJIHGFEDCBA"""
+    check50.run("./substitution_cipher") \
+           .stdin("ZYXWVUTSRQPONMLKJIHGFEDCBA") \
+           .stdin("I am a boy") \
+           .stdout("O qj q wgn") \
+           .exit(0)
