@@ -14,7 +14,7 @@ def compiles():
 @check50.check(compiles)
 def test_case_1():
     """Test Case 1: Input size 10 with mixed integers"""
-    check50.run("./reversed_array").stdin("1 2 4 5 7 8 9 0 3 6").stdout("6 3 0 9 8 7 5 4 2 1\n").exit(0)
+    check50.run("./reversed_array").stdin("1\n2\n4\n5\n7\n8\n9\n0\n3\n6").stdout("6 3 0 9 8 7 5 4 2 1\n").exit(0)
 
 @check50.check(compiles)
 def test_case_2():
