@@ -18,5 +18,5 @@ def test_input_1():
 
 @check50.check(compiles)
 def test_input_2():
-    """입력 : 9 / 기대 출력 : 1 2 4 5 7 8"""
+    """입력 : hello    world    w h a t / 기대 출력 : 6"""
     check50.run("./word_counter").stdin("hello    world    w h a t").stdout("6").exit(0)
