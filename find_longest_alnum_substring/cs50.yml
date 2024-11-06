@@ -1,7 +1,7 @@
 check50: 
   files: &check50_files
     - !exclude "*"
-    - !require filter.c
+    - !require find_longest_alnum_substring.c
     
 submit50:
   files: *check50_files
