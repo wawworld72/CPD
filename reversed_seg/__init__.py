@@ -19,4 +19,4 @@ def test_input_15():
 @check50.check(compiles)
 def test_input_9():
     """입력 : I am a boy / 기대 출력 : i ma a yob"""
-    check50.run("./reversed_seg").stdin("I am a boy").stdout("i ma a yob").exit(0)
+    check50.run("./reversed_seg").stdin("I am a boy").stdout("i ma a yob\n").exit(0)
