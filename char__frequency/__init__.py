@@ -3,7 +3,7 @@ import check50.c
 
 @check50.check()
 def exists():
-    """fchar_frequency.c exists"""
+    """char_frequency.c exists"""
     check50.exists("char_frequency.c")
     
 @check50.check(exists)
