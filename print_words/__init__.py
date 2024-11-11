@@ -3,20 +3,16 @@ import check50.c
 
 @check50.check()
 def exists():
-    """filter.c exists"""
-    check50.exists("filter.c")
+    """print_words.c exists"""
+    check50.exists("print_words.c")
     
 @check50.check(exists)
 def compiles():
-    """filter.c compiles"""
-    check50.c.compile("filter.c", lcs50 = True)
+    """print_words.c compiles"""
+    check50.c.compile("print_words.c", lcs50 = True)
 
 @check50.check(compiles)
 def test_input_15():
-    """입력 : 15 / 기대 출력 : 1 2 4 5 7 8 10"""
-    check50.run("./filter").stdin("15").stdout("1 2 4 5 7 8 10").exit(0)
+    """Test case 'i am a boy'"""
+    check50.run("./print_words").stdin("i am a boy").stdout("i\nam\na\nboy\n").exit(0)
 
-@check50.check(compiles)
-def test_input_9():
-    """입력 : 9 / 기대 출력 : 1 2 4 5 7 8"""
-    check50.run("./filter").stdin("9").stdout("1 2 4 5 7 8").exit(0)
