@@ -24,4 +24,4 @@ def test_input_2():
 @check50.check(compiles)
 def test_input_3():
     """입력 : 3i $Am A Boy. / 기대 출력 : 3i $am A Boy."""
-    check50.run("./cap_words").stdin("3i $Am A Boy.").stdout("3i $am A Boy.").exit(0)
+    check50.run("./cap_words").stdin("3i $Am A Boy.").stdout("3i $am A Boy.\n").exit(0)
