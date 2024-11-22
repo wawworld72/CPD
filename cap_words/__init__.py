@@ -3,20 +3,25 @@ import check50.c
 
 @check50.check()
 def exists():
-    """filter.c exists"""
-    check50.exists("filter.c")
+    """cap_words.c exists"""
+    check50.exists("cap_words.c")
     
 @check50.check(exists)
 def compiles():
-    """filter.c compiles"""
-    check50.c.compile("filter.c", lcs50 = True)
+    """cap_words.c compiles"""
+    check50.c.compile("cap_words.c", lcs50 = True)
 
 @check50.check(compiles)
-def test_input_15():
-    """입력 : 15 / 기대 출력 : 1 2 4 5 7 8 10"""
-    check50.run("./filter").stdin("15").stdout("1 2 4 5 7 8 10").exit(0)
+def test_input_1():
+    """입력 : hello WORLD 123 cOmPuTeR / 기대 출력 : Hello World 123 Computer"""
+    check50.run("./cap_words").stdin("hello WORLD 123 cOmPuTeR").stdout("Hello World 123 Computer").exit(0)
 
 @check50.check(compiles)
-def test_input_9():
-    """입력 : 9 / 기대 출력 : 1 2 4 5 7 8"""
-    check50.run("./filter").stdin("9").stdout("1 2 4 5 7 8").exit(0)
+def test_input_2():
+    """입력 : i aM a bOY. / 기대 출력 : I Am A Boy."""
+    check50.run("./cap_words").stdin("i aM a bOY.").stdout("I Am A Boy.").exit(0)
+
+@check50.check(compiles)
+def test_input_3():
+    """입력 : 3i $Am A Boy. / 기대 출력 : 3i $am A Boy."""
+    check50.run("./cap_words").stdin("3i $Am A Boy.").stdout("3i $am A Boy.").exit(0)
