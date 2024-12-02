@@ -4,4 +4,4 @@ check50:
     - !require "*"
     
 submit50:
-  files: "*"
+  files: *check50_files
