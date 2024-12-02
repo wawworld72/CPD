@@ -4,4 +4,6 @@ check50:
     - !require gamed.c
 
 submit50:
-  files: *check50_files
+  files:
+    - !exclude node_modules
+  style: false
