@@ -1,5 +1,7 @@
 check50: 
-  files: "*"
+  files: 
+    - !exclude "*"
+    - !require "*"
     
 submit50:
   files: "*"
